@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'mock'], function () {
+    Route::get('/google-play', [\App\Http\Controllers\Api\MockController::class, 'googlePlay']);
+    Route::get('/app-store', [\App\Http\Controllers\Api\MockController::class, 'appStore']);
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/statistics/{user}', [\App\Http\Controllers\Api\StatisticsController::class, 'statistics']);
+});
+

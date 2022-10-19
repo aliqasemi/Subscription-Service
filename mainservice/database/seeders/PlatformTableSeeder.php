@@ -19,7 +19,7 @@ class PlatformTableSeeder extends Seeder
                 'id' => Platform::$GOOGLEPLAY,
                 'name' => 'googlePlay',
                 'response_format_key' => 'status',
-                'address' => 'http://127.0.0.1:8001/api/mock/google-play',
+                'address' => 'http://127.0.0.1:8000/api/mock/google-play',
                 'time_minutes_to_resend_http_request' => '60'
             ]
         );
@@ -28,7 +28,7 @@ class PlatformTableSeeder extends Seeder
                 'id' => Platform::$APPSTORE,
                 'name' => 'appStore',
                 'response_format_key' => 'subscription',
-                'address' => 'http://127.0.0.1:8001/api/mock/app-store',
+                'address' => 'http://127.0.0.1:8000/api/mock/app-store',
                 'time_minutes_to_resend_http_request' => '120'
             ]
         );
