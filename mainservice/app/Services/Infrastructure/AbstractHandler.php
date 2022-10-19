@@ -15,4 +15,6 @@ abstract class AbstractHandler implements Handler
     public abstract function handle();
 
     public abstract function setAllAttribute($attr1, $attr2);
+
+    public abstract function setNextAttributes($attr1, $attr2);
 }

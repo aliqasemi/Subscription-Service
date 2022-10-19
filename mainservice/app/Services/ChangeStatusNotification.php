@@ -21,6 +21,11 @@ class ChangeStatusNotification extends AbstractHandler
 
     public function handle()
     {
+        $this->sendNotification();
+    }
+
+    public function sendNotification()
+    {
         if ($this->lastStatus == Subscription::$ACTIVE && $this->currentStatus == Subscription::$EXPIRED) {
             Event::dispatch(new MailEvent($this->app->user()->first(), $this->app->subscription()->first()));
         }
@@ -35,5 +40,9 @@ class ChangeStatusNotification extends AbstractHandler
     public function setApp($app)
     {
         $this->app = $app;
+    }
+
+    public function setNextAttributes($attr1, $attr2)
+    {
     }
 }

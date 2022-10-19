@@ -19,13 +19,26 @@ class StatusFromExtraService extends AbstractHandler
 
     public function handle()
     {
-        $response = Http::accept('application/json')
+        $this->setNextAttributes($this->getPlatform(), $this->getResponse(Arr::get($this->app, 'platform.address')));
+    }
+
+    public function getResponse($address)
+    {
+        return Http::accept('application/json')
             ->withHeaders([
                 'Content-Type' => 'application/json',
-            ])->get(Arr::get($this->app, 'platform.address'))->json();
+            ])->get($address)->json();
+    }
 
-        $ExtraServiceMap = config('map.' . Arr::get($this->app, 'platform.name'));
+    public function getPlatform()
+    {
+        return config('map.' . Arr::get($this->app, 'platform.name'));
+    }
+
+    public function setNextAttributes($ExtraServiceMap, $response)
+    {
         $this->nextHandler->setAllAttribute($ExtraServiceMap[$response[Arr::get($this->app, 'platform.response_format_key')]], null);
+
     }
 
     public function setAllAttribute($attr1 = null, $attr2 = null)
