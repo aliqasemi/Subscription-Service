@@ -2,16 +2,16 @@
 
 namespace Database\Factories;
 
+use App\Models\App;
 use App\Models\Platform;
 use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\Sequence;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\App>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Statistic>
  */
-class AppFactory extends Factory
+class StatisticFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,10 +21,7 @@ class AppFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->company(),
-            'unique_id' => fake()->buildingNumber(),
-            'user_id' => User::all()->random()->id,
-            'platform_id' => Platform::all()->random()->id,
+            'app_id' => App::all()->random()->id,
             'subscription_id' => Subscription::all()->random()->id,
         ];
     }

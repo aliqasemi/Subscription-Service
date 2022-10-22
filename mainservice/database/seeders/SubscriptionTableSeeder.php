@@ -14,29 +14,6 @@ class SubscriptionTableSeeder extends Seeder
      */
     public function run()
     {
-        Subscription::query()->updateOrCreate(
-            [
-                'id' => Subscription::$ACTIVE,
-                'status' => Subscription::$ACTIVE
-            ]
-        );
-        Subscription::query()->updateOrCreate(
-            [
-                'id' => Subscription::$EXPIRED,
-                'status' => Subscription::$EXPIRED
-            ]
-        );
-        Subscription::query()->updateOrCreate(
-            [
-                'id' => Subscription::$PENDING,
-                'status' => Subscription::$PENDING
-            ]
-        );
-        Subscription::query()->updateOrCreate(
-            [
-                'id' => Subscription::$FAILED,
-                'status' => Subscription::$FAILED
-            ]
-        );
+        Subscription::factory()->count(4)->create();
     }
 }

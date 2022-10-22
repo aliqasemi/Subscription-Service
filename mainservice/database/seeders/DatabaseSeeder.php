@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(SubscriptionTableSeeder::class);
         $this->call(PlatformTableSeeder::class);
-        $this->call(SubscriptionTableSeeder::class);
         $this->call(AppTableSeeder::class);
     }
 }

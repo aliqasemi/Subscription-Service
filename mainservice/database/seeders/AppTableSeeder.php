@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\App;
 use Illuminate\Database\Seeder;
 
 class AppTableSeeder extends Seeder
@@ -14,6 +14,6 @@ class AppTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\App::factory(30)->create();
+        App::factory(30)->create();
     }
 }

@@ -9,7 +9,7 @@ class App extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'unique_id'];
+    protected $fillable = ['name', 'unique_id', 'user_id'];
 
     public function getTable(): string
     {

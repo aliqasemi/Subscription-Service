@@ -9,7 +9,7 @@ class Statistic extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = ['app_id', 'subscription_id'];
 
     public function getTable(): string
     {
