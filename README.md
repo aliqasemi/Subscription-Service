@@ -11,4 +11,4 @@ how to run
 - run this command scheduler `* * * * * cd /project-directory && php artisan schedule:run >> /dev/null 2>&1` or
   add `* * * * *` on `php artisan schedule:run` in cron tab
 - run this command `php artisan queue:work`
-- finally write few test because I don't have enough time, run `php artisan test`
+- final, run `php artisan test`
