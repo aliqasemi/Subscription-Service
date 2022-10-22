@@ -3,9 +3,7 @@
 namespace Tests\Unit;
 
 use App\Models\App;
-use App\Models\Platform;
 use App\Models\Subscription;
-use App\Services\StatusFromExtraService;
 use App\Services\UpdateFields;
 use Tests\TestCase;
 

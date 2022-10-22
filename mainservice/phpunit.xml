@@ -21,10 +21,17 @@
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
-        <!-- <env name="DB_CONNECTION" value="sqlite"/> -->
-         <env name="DB_DATABASE" value="ParsBackTest"/>
-        <env name="MAIL_MAILER" value="array"/>
-        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="DB_CONNECTION" value="mysql"/>
+        <env name="DB_DATABASE" value="ParsBackTest"/>
+        <env name="MAIL_MAILER" value="smtp"/>
+        <env name="MAIL_HOST" value="smtp.mailtrap.io"/>
+        <env name="MAIL_PORT" value="2525"/>
+        <env name="MAIL_USERNAME" value="0ea5de961b757e"/>
+        <env name="MAIL_PASSWORD" value="0446ddbd74262a"/>
+        <env name="MAIL_ENCRYPTION" value="tls"/>
+        <env name="MAIL_FROM_ADDRESS" value="hello@example.com"/>
+        <env name="MAIL_FROM_NAME" value="Laravel"/>
+        <env name="QUEUE_CONNECTION" value="database"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
     </php>
